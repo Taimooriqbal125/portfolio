@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import {
   FaReact,
   FaGithub,
@@ -38,110 +37,34 @@ export default function Expertise() {
   return (
     <section
       id="expertise"
-      style={{
-        padding: "40px 20px 80px",
-        background: "#0a0a0a",
-        overflow: "hidden",
-        width: "100%",
-      }}
+      className="py-10 px-5 bg-[#0a0a0a] overflow-hidden w-full max-md:py-16 max-md:px-5"
     >
       {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: "60px" }}>
-        <div
-          style={{
-            width: "48px",
-            height: "48px",
-            margin: "0 auto 16px",
-            background: "#161817",
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: "12px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#3b82f6",
-          }}
-        >
+      <div className="text-center mb-[60px]">
+        <div className="w-12 h-12 mx-auto mb-4 bg-[#161817] border border-white/10 rounded-xl flex items-center justify-center text-[#3b82f6]">
           <FaReact size={20} />
         </div>
-        <h2
-          style={{
-            color: "#f8fafc",
-            fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)",
-            fontWeight: 700,
-            margin: 0,
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-          }}
-        >
+        <h2 className="text-[#f8fafc] text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold m-0">
           Built with the tools I know best.
         </h2>
       </div>
 
-      {/* Marquee - with top padding so cards don't touch */}
-      <div
-        style={{
-          width: "100%",
-          overflow: "hidden",
-          paddingTop: "40px",
-          paddingBottom: "40px",
-        }}
-      >
-        <motion.div
-          style={{
-            display: "flex",
-            gap: "24px",
-            width: "max-content",
-          }}
-          animate={{ x: [0, -2000] }}
-          initial={false}
-          transition={{
-            duration: 35,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        >
+      {/* Marquee */}
+      <div className="w-full overflow-hidden py-10">
+        <div className="flex gap-6 w-max animate-marquee">
           {items.map((item, i) => (
             <div
               key={i}
-              style={{
-                width: "120px",
-                height: "140px",
-                background: "#161817",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "16px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "12px",
-                flexShrink: 0,
-                transition: "border-color 0.3s ease",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = item.color
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"
-              }}
+              className="w-[120px] h-[140px] bg-[#161817] border border-white/10 rounded-2xl flex flex-col items-center justify-center gap-3 shrink-0 transition-[border-color] duration-300 cursor-pointer hover:border-[var(--accent)]"
+              style={{ "--accent": item.color }}
             >
-              <item.icon
-                size={36}
-                style={{ color: item.color }}
-              />
-              <span
-                style={{
-                  color: "#9aa39f",
-                  fontSize: "11px",
-                  fontFamily: "'JetBrains Mono', monospace",
-                  textAlign: "center",
-                  padding: "0 8px",
-                }}
-              >
+              <item.icon size={36} style={{ color: item.color }} />
+              <span className="text-[#9aa39f] text-[11px] font-[family-name:var(--font-jetbrains)] text-center px-2">
                 {item.label}
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
