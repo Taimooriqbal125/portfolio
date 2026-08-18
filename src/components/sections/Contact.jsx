@@ -79,7 +79,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows="5"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-[rgba(255,255,255,0.08)] bg-[#111111] text-[#f8fafc] focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent outline-none transition-all resize-none"
                   placeholder="Your message..."
                 />
               </div>

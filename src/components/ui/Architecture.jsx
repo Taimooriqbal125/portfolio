@@ -1,17 +1,3 @@
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google"
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-  display: "swap",
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-})
-
 const CODE_SNIPPET = `const architecture = {
   performance: '60fps',
   state: 'predictable',
@@ -20,111 +6,30 @@ const CODE_SNIPPET = `const architecture = {
 
 export default function Architecture() {
   return (
-    <section className={`arch-section ${jakarta.className}`}>
-      <div className="arch-panel">
-        <div className="arch-copy">
-          <h2 className="arch-title">The Architecture of Success</h2>
-          <p className="arch-text">
+    <section className="px-[4rem] pb-10 max-md:px-6 max-lg:px-6">
+      <div className="bg-[#111111] border border-white/[0.06] border-l-2 border-l-[#3b82f6] p-9 flex items-center justify-between gap-8 max-lg:flex-col max-lg:items-start max-lg:p-7">
+        <div className="max-w-[40rem]">
+          <h2 className="m-0 mb-3.5 text-[#3b82f6] text-[1.35rem] font-bold tracking-[-0.01em]">
+            The Architecture of Success
+          </h2>
+          <p className="m-0 text-[#d6dbd8] text-base leading-[1.65]">
             I build apps on rock-solid architectural patterns (Clean
             Architecture, MVVM) ensuring they are fast day one, and
             maintainable year five.
           </p>
         </div>
 
-        <div className="arch-code-window">
-          <div className="window-dots" aria-hidden="true">
-            <span />
-            <span />
-            <span />
+        <div className="shrink-0 w-[26rem] max-w-full bg-[#0d0d0d] border border-white/[0.05] p-[1.1rem_1.4rem] max-lg:w-full">
+          <div className="flex gap-[0.4rem] mb-3.5">
+            <span className="w-[0.45rem] h-[0.45rem] rounded-full bg-[#5b605e]" />
+            <span className="w-[0.45rem] h-[0.45rem] rounded-full bg-[#5b605e]" />
+            <span className="w-[0.45rem] h-[0.45rem] rounded-full bg-[#5b605e]" />
           </div>
-          <pre className={`arch-code ${jetbrainsMono.className}`}>
+          <pre className="m-0 text-[#3b82f6] text-[0.8rem] leading-[1.7] overflow-x-auto font-normal">
             {CODE_SNIPPET}
           </pre>
         </div>
       </div>
-
-      <style jsx>{`
-        .arch-section {
-          padding: 0.75rem 4rem 2.5rem;
-        }
-
-        .arch-panel {
-          background: #111111;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          border-left: 2px solid #3b82f6;
-          padding: 2.25rem 2.5rem;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 2rem;
-        }
-
-        .arch-copy {
-          max-width: 40rem;
-        }
-
-        .arch-title {
-          margin: 0 0 0.9rem;
-          color: #3b82f6;
-          font-size: 1.35rem;
-          font-weight: 700;
-          letter-spacing: -0.01em;
-        }
-
-        .arch-text {
-          margin: 0;
-          color: #d6dbd8;
-          font-size: 1rem;
-          line-height: 1.65;
-        }
-
-        .arch-code-window {
-          flex-shrink: 0;
-          width: 26rem;
-          max-width: 100%;
-          background: #0d0d0d;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          padding: 1.1rem 1.4rem;
-        }
-
-        .window-dots {
-          display: flex;
-          gap: 0.4rem;
-          margin-bottom: 0.9rem;
-        }
-
-        .window-dots span {
-          width: 0.45rem;
-          height: 0.45rem;
-          border-radius: 50%;
-          background: #5b605e;
-        }
-
-        .arch-code {
-          margin: 0;
-          color: #3b82f6;
-          font-size: 0.8rem;
-          line-height: 1.7;
-          overflow-x: auto;
-        }
-
-        @media (max-width: 1100px) {
-          .arch-panel {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1.75rem;
-          }
-          .arch-code-window {
-            width: 100%;
-          }
-        }
-
-        @media (max-width: 900px) {
-          .arch-section {
-            padding: 0.75rem 1.5rem 2rem;
-          }
-        }
-      `}</style>
     </section>
   )
 }

@@ -9,6 +9,9 @@ export default function ProjectCard({ project }) {
         <img
           src={project.image}
           alt={project.title}
+          loading="lazy"
+          width="640"
+          height="360"
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 

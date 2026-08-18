@@ -8,30 +8,6 @@ import {
   Code2,
   ArrowUpRight,
 } from "lucide-react"
-import {
-  Plus_Jakarta_Sans,
-  JetBrains_Mono,
-  Playfair_Display,
-} from "next/font/google"
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-})
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  style: ["italic"],
-  weight: ["500"],
-  display: "swap",
-})
 
 const HIGHLIGHTS = [
   {
@@ -53,142 +29,103 @@ const HIGHLIGHTS = [
 ]
 
 const fadeUp = (delay = 0) => ({
-  initial: {
-    opacity: 0,
-    y: 15,
-  },
-  whileInView: {
-    opacity: 1,
-    y: 0,
-  },
-  viewport: {
-    once: true,
-  },
-  transition: {
-    duration: 0.5,
-    ease: "easeOut",
-    delay,
-  },
+  initial: { opacity: 0, y: 15 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: "easeOut", delay },
 })
 
 export default function About() {
   return (
-    <section id="about" className={`about-section ${jakarta.className}`}>
-      <div className="about-container">
+    <section id="about" className="w-full min-h-full py-10 px-16 bg-[#0b0c0c] overflow-hidden max-lg:px-10 max-md:px-6 max-md:py-8">
+      <div className="w-full max-w-[1320px] mx-auto">
 
-        {/* ================= TOP ================= */}
-
-        <motion.div className="about-header" {...fadeUp()}>
-          <div className="about-title-wrap">
-            <span className={`section-number ${jetbrainsMono.className}`}>
+        {/* ================= HEADER ================= */}
+        <motion.div className="flex items-end justify-between mb-8 max-md:mb-7" {...fadeUp()}>
+          <div className="flex items-start gap-4">
+            <span className="mt-[0.55rem] text-[#3b82f6] text-[0.7rem] tracking-[0.08em] font-[family-name:var(--font-jetbrains)]">
               02
             </span>
-
-            <h2 className={`about-title ${playfair.className}`}>
+            <h2 className="m-0 text-[#eae4dd] text-[clamp(2.6rem,4vw,3.7rem)] italic font-medium leading-[0.95] font-[family-name:var(--font-playfair)]">
               About me.
             </h2>
           </div>
-
-          <span className={`section-label ${jetbrainsMono.className}`}>
+          <span className="mb-[0.35rem] text-[#505754] text-[0.6rem] tracking-[0.1em] font-[family-name:var(--font-jetbrains)] max-md:hidden">
             GET TO KNOW ME
           </span>
         </motion.div>
 
         {/* ================= MAIN ================= */}
-
-        <div className="about-layout">
+        <div className="grid gap-16 items-center max-lg:gap-10 max-lg:grid-cols-[minmax(350px,0.9fr)_1.1fr] max-md:grid-cols-1 max-md:gap-8">
 
           {/* ================= IMAGE ================= */}
-
-          <motion.div
-            className="about-visual"
-            {...fadeUp(0.08)}
-          >
-            <div className="photo-frame">
-
-              <div className="photo-corner top-left" />
-              <div className="photo-corner bottom-right" />
-
+          <motion.div className="w-full max-md:max-w-[600px]" {...fadeUp(0.08)}>
+            <div className="relative w-full aspect-[16/9]">
+              <div className="absolute top-[-10px] left-[-10px] z-[3] w-12 h-12 pointer-events-none border-t border-l border-[#3b82f6]" />
+              <div className="absolute bottom-[-10px] right-[-10px] z-[3] w-12 h-12 pointer-events-none border-b border-r border-[rgba(59,130,246,0.45)]" />
               <img
                 src="/images/me.jpeg"
                 alt="Temoor Iqbal"
-                className="about-image"
+                width="640"
+                height="360"
+                className="relative z-[2] block w-full h-full object-cover border border-white/10"
               />
             </div>
 
-            <div
-              className={`availability ${jetbrainsMono.className}`}
-            >
-              <span className="status-dot" />
+            <div className="flex items-center gap-[0.55rem] mt-[0.8rem] text-[#737b78] text-[0.62rem] tracking-[0.06em] font-[family-name:var(--font-jetbrains)]">
+              <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#3b82f6] shadow-[0_0_0_4px_rgba(59,130,246,0.08)]" />
               AVAILABLE FOR WORK
             </div>
           </motion.div>
 
           {/* ================= CONTENT ================= */}
+          <div className="max-w-[650px] max-md:max-w-full">
 
-          <div className="about-content">
-
-            <motion.p
-              className={`about-label ${jetbrainsMono.className}`}
-              {...fadeUp(0.12)}
-            >
+            <motion.p className="m-0 mb-2 text-[#3b82f6] text-[0.65rem] tracking-[0.08em] font-[family-name:var(--font-jetbrains)]" {...fadeUp(0.12)}>
               / ABOUT ME
             </motion.p>
 
-            <motion.h3
-              className="about-heading"
-              {...fadeUp(0.16)}
-            >
+            <motion.h3 className="m-0 mb-4 text-[#f8fafc] text-[clamp(1.9rem,3vw,2.65rem)] font-bold leading-[1.08] tracking-[-0.035em]" {...fadeUp(0.16)}>
               The developer behind
-              <span> the products.</span>
+              <span className="text-[#737b78] font-medium"> the products.</span>
             </motion.h3>
 
-            <motion.p
-              className="about-lead"
-              {...fadeUp(0.2)}
-            >
+            <motion.p className="m-0 mb-[0.7rem] text-[#d0d6d3] text-[0.88rem] leading-[1.65]" {...fadeUp(0.2)}>
               I&apos;m a Full-Stack Developer with a strong focus on
               React Native, building polished mobile experiences and
               reliable backend systems that bring digital products to life.
             </motion.p>
 
-            <motion.p
-              className="about-description"
-              {...fadeUp(0.24)}
-            >
+            <motion.p className="m-0 text-[#858d89] text-[0.8rem] leading-[1.65]" {...fadeUp(0.24)}>
               I work across the stack with React, React Native, Node.js,
               FastAPI, Firebase, and Supabase, focusing on clean
               architecture, performance, and maintainable code.
             </motion.p>
 
             {/* ================= HIGHLIGHTS ================= */}
-
-            <div className="highlights">
+            <div className="grid grid-cols-2 gap-[0.6rem] mt-[1.35rem] max-md:grid-cols-1">
               {HIGHLIGHTS.map((item, index) => (
                 <motion.div
                   key={item.text}
-                  className="highlight"
+                  className="flex items-center gap-[0.65rem] min-h-[42px] py-[0.55rem] px-[0.7rem] bg-[#111313] border border-white/[0.06] text-[#b9c0bd] text-[0.7rem] transition-all duration-[0.25s] hover:bg-[#151817] hover:border-[rgba(59,130,246,0.3)] hover:-translate-y-0.5"
                   {...fadeUp(0.28 + index * 0.05)}
                 >
-                  <div className="highlight-icon">
+                  <div className="grid place-items-center w-[26px] h-[26px] shrink-0 text-[#3b82f6] bg-[rgba(59,130,246,0.08)] border border-[rgba(59,130,246,0.12)]">
                     <item.icon size={15} />
                   </div>
-
                   <span>{item.text}</span>
                 </motion.div>
               ))}
             </div>
 
             {/* ================= CTA ================= */}
-
             <motion.a
               href="#contact"
-              className="about-cta"
+              className="inline-flex items-center gap-[0.7rem] mt-5 text-[#e7ebe9] text-[0.78rem] font-semibold no-underline transition-colors duration-[0.25s] hover:text-[#3b82f6]"
               {...fadeUp(0.5)}
             >
               <span>Let&apos;s build something together</span>
-
-              <span className="cta-arrow">
+              <span className="grid place-items-center w-[27px] h-[27px] border border-white/[0.12] transition-all duration-[0.25s] hover:translate-x-0.5 hover:-translate-y-0.5 hover:border-[rgba(59,130,246,0.5)]">
                 <ArrowUpRight size={16} />
               </span>
             </motion.a>
@@ -196,306 +133,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .about-section {
-          width: 100%;
-          min-height: 100%;
-          padding: 2.5rem 4rem;
-          background: #0b0c0c;
-          overflow: hidden;
-        }
-
-        .about-container {
-          width: 100%;
-          max-width: 1320px;
-          margin: 0 auto;
-        }
-
-        /* ================= HEADER ================= */
-
-        .about-header {
-          display: flex;
-          align-items: flex-end;
-          justify-content: space-between;
-          margin-bottom: 2rem;
-        }
-
-        .about-title-wrap {
-          display: flex;
-          align-items: flex-start;
-          gap: 1rem;
-        }
-
-        .section-number {
-          margin-top: 0.55rem;
-          color: #3b82f6;
-          font-size: 0.7rem;
-          letter-spacing: 0.08em;
-        }
-
-        .about-title {
-          margin: 0;
-          color: #eae4dd;
-          font-size: clamp(2.6rem, 4vw, 3.7rem);
-          font-style: italic;
-          font-weight: 500;
-          line-height: 0.95;
-        }
-
-        .section-label {
-          margin-bottom: 0.35rem;
-          color: #505754;
-          font-size: 0.6rem;
-          letter-spacing: 0.1em;
-        }
-
-        /* ================= MAIN LAYOUT ================= */
-
-        .about-layout {
-          display: grid;
-          grid-template-columns: minmax(390px, 0.95fr) minmax(420px, 1.05fr);
-          gap: 4rem;
-          align-items: center;
-        }
-
-        /* ================= IMAGE ================= */
-
-        .about-visual {
-          width: 100%;
-        }
-
-        .photo-frame {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 16 / 9;
-        }
-
-        .about-image {
-          position: relative;
-          z-index: 2;
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .photo-corner {
-          position: absolute;
-          z-index: 3;
-          width: 48px;
-          height: 48px;
-          pointer-events: none;
-        }
-
-        .photo-corner.top-left {
-          top: -10px;
-          left: -10px;
-          border-top: 1px solid #3b82f6;
-          border-left: 1px solid #3b82f6;
-        }
-
-        .photo-corner.bottom-right {
-          right: -10px;
-          bottom: -10px;
-          border-right: 1px solid rgba(59, 130, 246, 0.45);
-          border-bottom: 1px solid rgba(59, 130, 246, 0.45);
-        }
-
-        .availability {
-          display: flex;
-          align-items: center;
-          gap: 0.55rem;
-          margin-top: 0.8rem;
-          color: #737b78;
-          font-size: 0.62rem;
-          letter-spacing: 0.06em;
-        }
-
-        .status-dot {
-          width: 6px;
-          height: 6px;
-          flex-shrink: 0;
-          border-radius: 50%;
-          background: #3b82f6;
-          box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
-        }
-
-        /* ================= CONTENT ================= */
-
-        .about-content {
-          max-width: 650px;
-        }
-
-        .about-label {
-          margin: 0 0 0.5rem;
-          color: #3b82f6;
-          font-size: 0.65rem;
-          letter-spacing: 0.08em;
-        }
-
-        .about-heading {
-          margin: 0 0 1rem;
-          color: #f8fafc;
-          font-size: clamp(1.9rem, 3vw, 2.65rem);
-          font-weight: 700;
-          line-height: 1.08;
-          letter-spacing: -0.035em;
-        }
-
-        .about-heading span {
-          color: #737b78;
-          font-weight: 500;
-        }
-
-        .about-lead {
-          margin: 0 0 0.7rem;
-          color: #d0d6d3;
-          font-size: 0.88rem;
-          line-height: 1.65;
-        }
-
-        .about-description {
-          margin: 0;
-          color: #858d89;
-          font-size: 0.8rem;
-          line-height: 1.65;
-        }
-
-        /* ================= HIGHLIGHTS ================= */
-
-        .highlights {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.6rem;
-          margin-top: 1.35rem;
-        }
-
-        .highlight {
-          display: flex;
-          align-items: center;
-          gap: 0.65rem;
-          min-height: 42px;
-          padding: 0.55rem 0.7rem;
-          background: #111313;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          color: #b9c0bd;
-          font-size: 0.7rem;
-          transition: all 0.25s ease;
-        }
-
-        .highlight:hover {
-          background: #151817;
-          border-color: rgba(59, 130, 246, 0.3);
-          transform: translateY(-2px);
-        }
-
-        .highlight-icon {
-          display: grid;
-          place-items: center;
-          width: 26px;
-          height: 26px;
-          flex-shrink: 0;
-          color: #3b82f6;
-          background: rgba(59, 130, 246, 0.08);
-          border: 1px solid rgba(59, 130, 246, 0.12);
-        }
-
-        /* ================= CTA ================= */
-
-        .about-cta {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.7rem;
-          margin-top: 1.25rem;
-          color: #e7ebe9;
-          font-size: 0.78rem;
-          font-weight: 600;
-          text-decoration: none;
-          transition: color 0.25s ease;
-        }
-
-        .about-cta:hover {
-          color: #3b82f6;
-        }
-
-        .cta-arrow {
-          display: grid;
-          place-items: center;
-          width: 27px;
-          height: 27px;
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          transition: all 0.25s ease;
-        }
-
-        .about-cta:hover .cta-arrow {
-          transform: translate(2px, -2px);
-          border-color: rgba(59, 130, 246, 0.5);
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media (max-width: 1050px) {
-          .about-section {
-            padding: 2.25rem 2.5rem;
-          }
-
-          .about-layout {
-            gap: 2.5rem;
-            grid-template-columns: minmax(350px, 0.9fr) 1.1fr;
-          }
-        }
-
-        @media (max-width: 800px) {
-          .about-section {
-            padding: 2rem 1.5rem;
-          }
-
-          .about-header {
-            margin-bottom: 1.75rem;
-          }
-
-          .section-label {
-            display: none;
-          }
-
-          .about-layout {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-          }
-
-          .about-visual {
-            max-width: 600px;
-          }
-
-          .about-content {
-            max-width: 100%;
-          }
-        }
-
-        @media (max-width: 520px) {
-          .about-title {
-            font-size: 2.5rem;
-          }
-
-          .about-title-wrap {
-            gap: 0.7rem;
-          }
-
-          .about-heading {
-            font-size: 1.9rem;
-          }
-
-          .highlights {
-            grid-template-columns: 1fr;
-          }
-
-          .about-lead {
-            font-size: 0.82rem;
-          }
-        }
-      `}</style>
     </section>
   )
 }

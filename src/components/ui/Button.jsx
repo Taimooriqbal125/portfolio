@@ -11,13 +11,13 @@ export default function Button({
     "inline-flex items-center justify-center font-medium transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
 
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500",
+    primary: "bg-[#3b82f6] text-white hover:bg-[#2563eb] focus:ring-[#3b82f6]",
     secondary:
-      "bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600",
+      "bg-[#222222] text-[#f8fafc] hover:bg-[#333333] focus:ring-[#555555]",
     outline:
-      "border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500 dark:hover:bg-blue-900/20",
+      "border-2 border-[#3b82f6] text-[#3b82f6] hover:bg-[rgba(59,130,246,0.1)] focus:ring-[#3b82f6]",
     ghost:
-      "text-gray-600 hover:bg-gray-100 focus:ring-gray-500 dark:text-gray-300 dark:hover:bg-gray-800",
+      "text-[#94a3b8] hover:bg-white/[0.06] focus:ring-[#3b82f6]",
   }
 
   const sizes = {
