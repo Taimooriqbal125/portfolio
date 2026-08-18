@@ -27,7 +27,7 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#book-a-call" className="btn btn-primary">
+          <a href="https://calendly.com/taimooriqbal308/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             Book a Call
             <svg
               className="btn-arrow"
@@ -62,7 +62,7 @@ export default function Hero() {
           text-align: center;
           overflow: hidden;
           padding: 4rem 1.5rem;
-          background-color: #050208;
+          background-color: #0a0a0a;
           background-image: radial-gradient(
               55rem 38rem at 80% 15%,
               rgba(88, 28, 135, 0.16),
@@ -114,7 +114,7 @@ export default function Hero() {
           right: -0.08em;
           bottom: 0.07em;
           height: 0.28em;
-          background: #581c87;
+          background: #3b82f6;
           border-radius: 0.04em;
         }
 

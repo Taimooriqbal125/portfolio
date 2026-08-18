@@ -4,7 +4,7 @@ export default function ProjectGrid({ projects }) {
   if (projects.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500 dark:text-gray-400 text-lg">
+        <p className="text-[#94a3b8] text-lg">
           No projects found matching your criteria.
         </p>
       </div>

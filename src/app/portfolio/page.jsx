@@ -9,10 +9,10 @@ export const metadata = {
 
 export default function PortfolioPage() {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800 min-h-screen">
+    <section className="py-20 bg-[#0a0a0a] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="My Portfolio"
+          title="Shipped & Scaled."
           subtitle="A collection of my recent work and projects"
         />
 

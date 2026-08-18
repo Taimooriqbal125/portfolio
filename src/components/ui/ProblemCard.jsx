@@ -16,7 +16,7 @@ export default function ProblemCard({
   icon,
   title,
   description,
-  accent = "#e0876e",
+  accent = "#3b82f6",
 }) {
   return (
     <article
@@ -33,7 +33,7 @@ export default function ProblemCard({
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          background: #1a1d1c;
+          background: #111111;
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 4px;
           padding: 1.75rem;

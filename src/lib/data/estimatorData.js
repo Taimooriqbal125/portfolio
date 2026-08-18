@@ -1,7 +1,7 @@
 export const ESTIMATOR_COPY = {
   heading: "Ballpark your project cost",
   sub: "Select features to get a rough estimate. Final quote provided after we review your requirements on a call.",
-  email: "hello@kivrosolution.com",
+  email: "taimooriqbal308@gmail.com",
 };
 
 export const FEATURE_GROUPS = [
@@ -66,5 +66,5 @@ export const HOURLY_CARD = {
     "Cancel anytime",
   ],
   cta: "Book hourly session",
-  href: "/contact",
+  href: "https://calendly.com/taimooriqbal308/30min",
 };

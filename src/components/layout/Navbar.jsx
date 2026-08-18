@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans } from "next/font/google"
 import Link from "next/link"
 import { Home } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { usePathname } from "next/navigation"
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -13,10 +14,10 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const NAV_LINKS = [
   { label: "About", href: "/about" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "Portfolio", href: "#projects" },
-  { label: "Resume", href: "#resume" },
-  { label: "Hire me", href: "#contact", isButton: true },
+  { label: "Expertise", href: "/#expertise" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Resume", href: "/#resume" },
+  { label: "1:1", href: "https://calendly.com/taimooriqbal308/30min", isButton: true, isExternal: true },
 ]
 
 /* ---- Tune the shrink animation here ---- */
@@ -26,6 +27,7 @@ const WIDTH_RANGE = ["74rem", "48rem"] // start width → stop width
 
 export default function Navbar() {
   const { scrollY } = useScroll()
+  const pathname = usePathname()
 
   // Shrinks with scroll, then clamps (stops) at the smaller width
   const maxWidth = useTransform(scrollY, SCROLL_RANGE, WIDTH_RANGE)
@@ -41,17 +43,30 @@ export default function Navbar() {
           <Home size={16} strokeWidth={2.5} />
         </Link>
 
-        {NAV_LINKS.map((link) =>
-          link.isButton ? (
-            <a key={link.label} href={link.href} className="nav-link-btn">
+        {NAV_LINKS.map((link) => {
+          const isActive = link.href.startsWith("/#")
+            ? pathname === "/"
+            : pathname === link.href
+          return link.isButton ? (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.isExternal ? "_blank" : undefined}
+              rel={link.isExternal ? "noopener noreferrer" : undefined}
+              className="nav-link-btn"
+            >
               {link.label}
             </a>
           ) : (
-            <a key={link.label} href={link.href} className="nav-link">
+            <a
+              key={link.label}
+              href={link.href}
+              className={`nav-link ${isActive ? "nav-link-active" : ""}`}
+            >
               {link.label}
             </a>
           )
-        )}
+        })}
       </motion.nav>
 
       <style jsx>{`
@@ -79,6 +94,11 @@ export default function Navbar() {
 
         .nav-link:hover {
           background: rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-link-active {
+          background: rgba(59, 130, 246, 0.1);
+          color: #3b82f6;
         }
 
         .nav-link-btn {

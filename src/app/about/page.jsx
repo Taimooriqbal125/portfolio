@@ -5,8 +5,8 @@ import {
   Trophy,
   Presentation,
   Users,
-  Smartphone,
-  ArrowRight,
+  Code2,
+  ArrowUpRight,
 } from "lucide-react"
 import {
   Plus_Jakarta_Sans,
@@ -16,7 +16,7 @@ import {
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 })
 
@@ -34,256 +34,465 @@ const playfair = Playfair_Display({
 })
 
 const HIGHLIGHTS = [
-  { icon: Trophy, text: "4+ International Hackathons" },
-  { icon: Presentation, text: "Workshops & Tech Talks" },
-  { icon: Users, text: "Mentoring & Collaboration" },
-  { icon: Smartphone, text: "React Native / Expo Specialist" },
+  {
+    icon: Trophy,
+    text: "4+ International Hackathons",
+  },
+  {
+    icon: Presentation,
+    text: "Workshops & Tech Talks",
+  },
+  {
+    icon: Users,
+    text: "Global Collaboration",
+  },
+  {
+    icon: Code2,
+    text: "Full-Stack Development",
+  },
 ]
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: "easeOut", delay },
+  initial: {
+    opacity: 0,
+    y: 15,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+  },
+  transition: {
+    duration: 0.5,
+    ease: "easeOut",
+    delay,
+  },
 })
 
 export default function About() {
   return (
     <section id="about" className={`about-section ${jakarta.className}`}>
-      {/* ============ Serif display heading ============ */}
-      <motion.h2 className={`about-serif ${playfair.className}`} {...fadeUp()}>
-        Past & Present
-      </motion.h2>
+      <div className="about-container">
 
-      <div className="about-grid">
-        {/* ============ Left: photo ============ */}
-        <motion.div className="about-photo-wrap" {...fadeUp()}>
-          <div className="about-photo">
-            {/* 👇 Replace this placeholder with your real photo:
-                <Image src="/profile.jpg" alt="Portrait" fill className="about-img" />
-                (drop profile.jpg into /public) */}
-            <Smartphone size={64} strokeWidth={1.5} className="photo-icon" />
+        {/* ================= TOP ================= */}
+
+        <motion.div className="about-header" {...fadeUp()}>
+          <div className="about-title-wrap">
+            <span className={`section-number ${jetbrainsMono.className}`}>
+              02
+            </span>
+
+            <h2 className={`about-title ${playfair.className}`}>
+              About me.
+            </h2>
           </div>
-          <div className={`about-caption ${jetbrainsMono.className}`}>
-            <span className="status-dot" />
-            React Native Developer
-          </div>
+
+          <span className={`section-label ${jetbrainsMono.className}`}>
+            GET TO KNOW ME
+          </span>
         </motion.div>
 
-        {/* ============ Right: story ============ */}
-        <div className="about-copy">
-          <motion.p className="about-label" {...fadeUp(0.05)}>
-            / About Me
-          </motion.p>
+        {/* ================= MAIN ================= */}
 
-          <motion.h3 className="about-heading" {...fadeUp(0.1)}>
-            The developer behind the apps.
-          </motion.h3>
+        <div className="about-layout">
 
-          <motion.p className="about-text lead" {...fadeUp(0.15)}>
-            I&apos;m a React Native mobile application developer who turns
-            ideas into fast, polished apps for iOS and Android. I care about
-            the details — pixel-perfect interfaces, smooth 60fps interactions,
-            and architecture that stays maintainable as products grow.
-          </motion.p>
+          {/* ================= IMAGE ================= */}
 
-          <motion.p className="about-text" {...fadeUp(0.2)}>
-            Beyond building products, I&apos;ve taken my craft to the global
-            stage — participating in 4+ international hackathons, leading
-            workshops, and collaborating with developers worldwide.
-            High-pressure teams, tight deadlines, and new problems are where I
-            do my best work.
-          </motion.p>
+          <motion.div
+            className="about-visual"
+            {...fadeUp(0.08)}
+          >
+            <div className="photo-frame">
 
-          <div className="about-highlights">
-            {HIGHLIGHTS.map((item, i) => (
-              <motion.div
-                key={item.text}
-                className="highlight-item"
-                {...fadeUp(0.25 + i * 0.08)}
-              >
-                <item.icon size={18} className="highlight-icon" />
-                {item.text}
-              </motion.div>
-            ))}
+              <div className="photo-corner top-left" />
+              <div className="photo-corner bottom-right" />
+
+              <img
+                src="/images/me.jpeg"
+                alt="Temoor Iqbal"
+                className="about-image"
+              />
+            </div>
+
+            <div
+              className={`availability ${jetbrainsMono.className}`}
+            >
+              <span className="status-dot" />
+              AVAILABLE FOR WORK
+            </div>
+          </motion.div>
+
+          {/* ================= CONTENT ================= */}
+
+          <div className="about-content">
+
+            <motion.p
+              className={`about-label ${jetbrainsMono.className}`}
+              {...fadeUp(0.12)}
+            >
+              / ABOUT ME
+            </motion.p>
+
+            <motion.h3
+              className="about-heading"
+              {...fadeUp(0.16)}
+            >
+              The developer behind
+              <span> the products.</span>
+            </motion.h3>
+
+            <motion.p
+              className="about-lead"
+              {...fadeUp(0.2)}
+            >
+              I&apos;m a Full-Stack Developer with a strong focus on
+              React Native, building polished mobile experiences and
+              reliable backend systems that bring digital products to life.
+            </motion.p>
+
+            <motion.p
+              className="about-description"
+              {...fadeUp(0.24)}
+            >
+              I work across the stack with React, React Native, Node.js,
+              FastAPI, Firebase, and Supabase, focusing on clean
+              architecture, performance, and maintainable code.
+            </motion.p>
+
+            {/* ================= HIGHLIGHTS ================= */}
+
+            <div className="highlights">
+              {HIGHLIGHTS.map((item, index) => (
+                <motion.div
+                  key={item.text}
+                  className="highlight"
+                  {...fadeUp(0.28 + index * 0.05)}
+                >
+                  <div className="highlight-icon">
+                    <item.icon size={15} />
+                  </div>
+
+                  <span>{item.text}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* ================= CTA ================= */}
+
+            <motion.a
+              href="#contact"
+              className="about-cta"
+              {...fadeUp(0.5)}
+            >
+              <span>Let&apos;s build something together</span>
+
+              <span className="cta-arrow">
+                <ArrowUpRight size={16} />
+              </span>
+            </motion.a>
+
           </div>
-
-          <motion.a href="#contact" className="about-cta" {...fadeUp(0.5)}>
-            Let&apos;s build something together
-            <ArrowRight size={18} />
-          </motion.a>
         </div>
       </div>
 
       <style jsx>{`
         .about-section {
-          padding: 3.5rem 4rem;
+          width: 100%;
+          min-height: 100%;
+          padding: 2.5rem 4rem;
+          background: #0b0c0c;
+          overflow: hidden;
         }
 
-        /* ---- serif display heading ---- */
-        .about-serif {
-          margin: 0 0 3rem;
+        .about-container {
+          width: 100%;
+          max-width: 1320px;
+          margin: 0 auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        .about-header {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          margin-bottom: 2rem;
+        }
+
+        .about-title-wrap {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .section-number {
+          margin-top: 0.55rem;
+          color: #3b82f6;
+          font-size: 0.7rem;
+          letter-spacing: 0.08em;
+        }
+
+        .about-title {
+          margin: 0;
           color: #eae4dd;
-          font-size: clamp(2.6rem, 5.5vw, 4rem);
+          font-size: clamp(2.6rem, 4vw, 3.7rem);
           font-style: italic;
           font-weight: 500;
-          letter-spacing: 0.01em;
-          line-height: 1.1;
+          line-height: 0.95;
         }
 
-        .about-grid {
+        .section-label {
+          margin-bottom: 0.35rem;
+          color: #505754;
+          font-size: 0.6rem;
+          letter-spacing: 0.1em;
+        }
+
+        /* ================= MAIN LAYOUT ================= */
+
+        .about-layout {
           display: grid;
-          grid-template-columns: 0.9fr 1.1fr;
+          grid-template-columns: minmax(390px, 0.95fr) minmax(420px, 1.05fr);
           gap: 4rem;
           align-items: center;
         }
 
-        /* ---- photo frame ---- */
-        .about-photo-wrap {
-          position: relative;
-          max-width: 26rem;
+        /* ================= IMAGE ================= */
+
+        .about-visual {
+          width: 100%;
         }
 
-        .about-photo-wrap::before {
-          content: "";
+        .photo-frame {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+        }
+
+        .about-image {
+          position: relative;
+          z-index: 2;
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .photo-corner {
           position: absolute;
-          inset: 1.25rem -1.25rem -1.25rem 1.25rem;
-          border: 1px solid rgba(34, 197, 94, 0.4);
-          z-index: 0;
+          z-index: 3;
+          width: 48px;
+          height: 48px;
+          pointer-events: none;
         }
 
-        .about-photo {
-          position: relative;
-          z-index: 1;
-          aspect-ratio: 4 / 5;
-          background: linear-gradient(160deg, #1b1f1d, #121514);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          display: grid;
-          place-items: center;
-          overflow: hidden;
+        .photo-corner.top-left {
+          top: -10px;
+          left: -10px;
+          border-top: 1px solid #3b82f6;
+          border-left: 1px solid #3b82f6;
         }
 
-        .photo-icon {
-          color: rgba(34, 197, 94, 0.35);
+        .photo-corner.bottom-right {
+          right: -10px;
+          bottom: -10px;
+          border-right: 1px solid rgba(59, 130, 246, 0.45);
+          border-bottom: 1px solid rgba(59, 130, 246, 0.45);
         }
 
-        .about-caption {
-          position: relative;
-          z-index: 1;
-          margin-top: 1.75rem;
+        .availability {
           display: flex;
           align-items: center;
-          gap: 0.6rem;
-          color: #9aa39f;
-          font-size: 0.85rem;
+          gap: 0.55rem;
+          margin-top: 0.8rem;
+          color: #737b78;
+          font-size: 0.62rem;
+          letter-spacing: 0.06em;
         }
 
         .status-dot {
-          width: 0.5rem;
-          height: 0.5rem;
+          width: 6px;
+          height: 6px;
+          flex-shrink: 0;
           border-radius: 50%;
-          background: #22c55e;
-          animation: pulse 2s infinite;
+          background: #3b82f6;
+          box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
         }
 
-        @keyframes pulse {
-          0%,
-          100% {
-            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
-          }
-          50% {
-            box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
-          }
+        /* ================= CONTENT ================= */
+
+        .about-content {
+          max-width: 650px;
         }
 
-        /* ---- copy ---- */
         .about-label {
-          color: #22c55e;
-          font-size: 0.8rem;
-          margin: 0 0 0.4rem;
+          margin: 0 0 0.5rem;
+          color: #3b82f6;
+          font-size: 0.65rem;
+          letter-spacing: 0.08em;
         }
 
         .about-heading {
-          color: #f8fafc;
-          font-size: 2.4rem;
-          font-weight: 700;
-          letter-spacing: -0.02em;
-          margin: 0 0 1.25rem;
-        }
-
-        .about-text {
-          color: #9aa39f;
-          font-size: 1rem;
-          line-height: 1.75;
           margin: 0 0 1rem;
+          color: #f8fafc;
+          font-size: clamp(1.9rem, 3vw, 2.65rem);
+          font-weight: 700;
+          line-height: 1.08;
+          letter-spacing: -0.035em;
         }
 
-        .about-text.lead {
-          color: #d6dbd8;
-        }
-
-        /* ---- highlight chips ---- */
-        .about-highlights {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.9rem;
-          margin-top: 1.75rem;
-        }
-
-        .highlight-item {
-          display: flex;
-          align-items: center;
-          gap: 0.7rem;
-          background: #161817;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 4px;
-          padding: 0.85rem 1rem;
-          color: #d3dad7;
-          font-size: 0.85rem;
+        .about-heading span {
+          color: #737b78;
           font-weight: 500;
         }
 
-        .highlight-icon {
-          color: #22c55e;
-          flex-shrink: 0;
+        .about-lead {
+          margin: 0 0 0.7rem;
+          color: #d0d6d3;
+          font-size: 0.88rem;
+          line-height: 1.65;
         }
 
+        .about-description {
+          margin: 0;
+          color: #858d89;
+          font-size: 0.8rem;
+          line-height: 1.65;
+        }
+
+        /* ================= HIGHLIGHTS ================= */
+
+        .highlights {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.6rem;
+          margin-top: 1.35rem;
+        }
+
+        .highlight {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+          min-height: 42px;
+          padding: 0.55rem 0.7rem;
+          background: #111313;
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          color: #b9c0bd;
+          font-size: 0.7rem;
+          transition: all 0.25s ease;
+        }
+
+        .highlight:hover {
+          background: #151817;
+          border-color: rgba(59, 130, 246, 0.3);
+          transform: translateY(-2px);
+        }
+
+        .highlight-icon {
+          display: grid;
+          place-items: center;
+          width: 26px;
+          height: 26px;
+          flex-shrink: 0;
+          color: #3b82f6;
+          background: rgba(59, 130, 246, 0.08);
+          border: 1px solid rgba(59, 130, 246, 0.12);
+        }
+
+        /* ================= CTA ================= */
+
         .about-cta {
-          margin-top: 2rem;
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
-          color: #22c55e;
+          gap: 0.7rem;
+          margin-top: 1.25rem;
+          color: #e7ebe9;
+          font-size: 0.78rem;
           font-weight: 600;
-          font-size: 0.95rem;
           text-decoration: none;
+          transition: color 0.25s ease;
         }
 
         .about-cta:hover {
-          text-decoration: underline;
-          text-underline-offset: 4px;
+          color: #3b82f6;
         }
 
-        /* ---- responsive ---- */
-        @media (max-width: 900px) {
+        .cta-arrow {
+          display: grid;
+          place-items: center;
+          width: 27px;
+          height: 27px;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          transition: all 0.25s ease;
+        }
+
+        .about-cta:hover .cta-arrow {
+          transform: translate(2px, -2px);
+          border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1050px) {
           .about-section {
-            padding: 2.5rem 1.5rem;
+            padding: 2.25rem 2.5rem;
           }
-          .about-serif {
-            margin-bottom: 2.25rem;
+
+          .about-layout {
+            gap: 2.5rem;
+            grid-template-columns: minmax(350px, 0.9fr) 1.1fr;
           }
-          .about-grid {
+        }
+
+        @media (max-width: 800px) {
+          .about-section {
+            padding: 2rem 1.5rem;
+          }
+
+          .about-header {
+            margin-bottom: 1.75rem;
+          }
+
+          .section-label {
+            display: none;
+          }
+
+          .about-layout {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2rem;
           }
-          .about-photo-wrap {
-            margin: 0 auto;
+
+          .about-visual {
+            max-width: 600px;
           }
+
+          .about-content {
+            max-width: 100%;
+          }
+        }
+
+        @media (max-width: 520px) {
+          .about-title {
+            font-size: 2.5rem;
+          }
+
+          .about-title-wrap {
+            gap: 0.7rem;
+          }
+
           .about-heading {
             font-size: 1.9rem;
           }
-          .about-highlights {
+
+          .highlights {
             grid-template-columns: 1fr;
+          }
+
+          .about-lead {
+            font-size: 0.82rem;
           }
         }
       `}</style>

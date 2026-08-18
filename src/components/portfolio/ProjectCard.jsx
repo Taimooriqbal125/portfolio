@@ -1,69 +1,54 @@
-import Card, { CardContent, CardFooter } from "@/components/ui/Card"
+import Card, { CardContent } from "@/components/ui/Card"
 
 export default function ProjectCard({ project }) {
   return (
-    <Card className="h-full flex flex-col">
-      <div className="relative aspect-video bg-gray-200 dark:bg-gray-700">
-        <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-500">
-          <svg
-            className="w-12 h-12"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a2.25 2.25 0 002.25-2.25V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-            />
-          </svg>
-        </div>
-      </div>
+    <Card className="group h-full overflow-hidden flex flex-col border border-white/10 bg-[#0d0d0d] hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
 
-      <CardContent className="flex-1">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-          {project.title}
-        </h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </CardContent>
+      {/* Project Image */}
+      <div className="relative aspect-video overflow-hidden bg-[#111111]">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
 
-      <CardFooter>
-        <div className="flex gap-4">
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+        {/* Quick Actions */}
+        <div className="absolute bottom-4 right-4 flex gap-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+
+          {/* GitHub */}
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            aria-label={`${project.title} GitHub repository`}
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-black border border-white/20 text-white hover:bg-black/80 transition-colors"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 fillRule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688.103-.253.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 clipRule="evenodd"
               />
             </svg>
           </a>
+
+          {/* Live Demo */}
           <a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            aria-label={`View ${project.title} live`}
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-white text-black hover:bg-white/90 transition-colors"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="2"
@@ -76,8 +61,35 @@ export default function ProjectCard({ project }) {
               />
             </svg>
           </a>
+
         </div>
-      </CardFooter>
+      </div>
+
+      {/* Content */}
+      <CardContent className="flex-1 p-5">
+        <h3 className="text-xl font-semibold tracking-tight text-[#f8fafc]">
+          {project.title}
+        </h3>
+
+        <div className="mt-2 h-px w-8 bg-white/20 group-hover:w-14 transition-all duration-300" />
+
+        <p className="mt-3 text-sm leading-6 text-[#94a3b8] line-clamp-3">
+          {project.description}
+        </p>
+
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2 mt-4">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-2.5 py-1 text-xs font-medium rounded-md bg-white/[0.06] border border-white/[0.08] text-[#cbd5e1]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </CardContent>
+
     </Card>
   )
 }

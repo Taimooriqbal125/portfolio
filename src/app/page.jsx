@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 const HIGHLIGHTS = [
-  "React Native/Expo",
+  "IOS / Android",
   "60fps Performance",
   "Pixel-Perfect UI",
 ]
@@ -79,7 +79,7 @@ export default function Home() {
 
         <style jsx>{`
           .trust-bar {
-            background: #151816;
+            background: #0a0a0a;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 1rem 4rem;
@@ -100,9 +100,9 @@ export default function Home() {
             width: 2.2rem;
             height: 2.2rem;
             border-radius: 0.4rem;
-            background: rgba(34, 197, 94, 0.08);
-            border: 1px solid rgba(34, 197, 94, 0.35);
-            color: #22c55e;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #3b82f6;
             display: grid;
             place-items: center;
             flex-shrink: 0;
@@ -144,7 +144,7 @@ export default function Home() {
           .dot {
             width: 0.4rem;
             height: 0.4rem;
-            background: #22c55e;
+            background: #3b82f6;
             flex-shrink: 0;
           }
 
@@ -182,7 +182,7 @@ export default function Home() {
           }
 
           .problems-label {
-            color: #e0876e;
+            color: #3b82f6;
             font-size: 0.8rem;
             margin: 0 0 0.4rem;
           }

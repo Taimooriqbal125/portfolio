@@ -50,7 +50,7 @@ export default function CostEstimator() {
   );
 
   return (
-    <section id="estimate" className="bg-[#0b0b0d] px-4 py-24 sm:px-8 sm:py-32 lg:px-12">
+    <section id="estimate" className="bg-[#0a0a0a] px-4 py-16 sm:px-8 sm:py-20 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
           {ESTIMATOR_COPY.heading}
@@ -61,7 +61,7 @@ export default function CostEstimator() {
 
         <div className="mt-14 grid gap-4 lg:grid-cols-[1.6fr_1fr]">
           {/* Left + Mid card */}
-          <div className="grid overflow-hidden rounded-3xl border border-zinc-800 bg-[#141416] md:grid-cols-2">
+            <div className="grid overflow-hidden rounded-3xl border border-zinc-800 bg-[#111111] md:grid-cols-2">
             <div className="p-4 sm:p-5 md:border-r md:border-zinc-800">
               <FeatureAccordion
                 groups={FEATURE_GROUPS}

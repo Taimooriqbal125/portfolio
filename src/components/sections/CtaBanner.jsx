@@ -1,18 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function CtaBanner({
-  badge = "Booking design sprints · 2 slots open",
-  line1 = "Stop guessing what users want.",
-  line2 = "Start with",
-  line2Accent = "a design that proves it.",
-  description = "Tell us the product and where it's stuck. We'll come back inside two business days with a read on fit and the first thing worth designing — no slide decks, no proposal theater.",
-  cta = { label: "Book a discovery call", href: "/contact" },
-  primary = "#0137a2",
-  primaryLight = "#5b8cff",
-  badgeClass = "bg-[#15803d]",
+  badge = "Available for app development · Let's build",
+  line1 = "Have an idea for an app?",
+  line2 = "Let's turn it into",
+  line2Accent = "a real product",
+  description = "Tell me about your idea, the problem you're solving, or where your current product is stuck. I'll help you shape the right technical approach and build a fast, reliable experience from frontend to backend.",
+  cta = { label: "Book a discovery call", href: "https://calendly.com/taimooriqbal308/30min" },
+  primary = "#3b82f6",
+  primaryLight = "#60a5fa",
+  badgeClass = "bg-[#3b82f6]",
 }) {
   return (
     <section className="px-4 py-10 sm:px-6 sm:py-12">
@@ -21,7 +20,7 @@ export default function CtaBanner({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#171310] px-5 py-8 sm:px-8 lg:px-10 lg:py-10"
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#111111] px-5 py-8 sm:px-8 lg:px-10 lg:py-10"
       >
         {/* Dot grid — pure CSS */}
         <div className="pointer-events-none absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,0.13)_1px,transparent_1px)] [background-size:20px_20px]" />
@@ -73,8 +72,10 @@ export default function CtaBanner({
 
           {/* CTA button */}
           <div className="relative shrink-0">
-            <Link
+            <a
               href={cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold text-white shadow-lg transition-transform duration-300 hover:-translate-y-0.5 sm:text-sm"
               style={{ backgroundColor: primary }}
             >
@@ -82,7 +83,7 @@ export default function CtaBanner({
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 &rarr;
               </span>
-            </Link>
+            </a>
           </div>
         </div>
       </motion.div>

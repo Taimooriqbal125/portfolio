@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/config"
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Get In Touch"
@@ -13,7 +13,7 @@ export default function Contact() {
 
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-lg text-[#94a3b8] mb-8">
               I&apos;m always open to discussing new projects, creative ideas, or
               opportunities to be part of your vision. Feel free to reach out!
             </p>
@@ -34,12 +34,12 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+          <div className="bg-[#111111] rounded-xl p-8">
             <form className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-[#94a3b8] mb-2"
                 >
                   Name
                 </label>
@@ -47,7 +47,7 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-[rgba(255,255,255,0.08)] bg-[#111111] text-[#f8fafc] focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent outline-none transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -55,7 +55,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-[#94a3b8] mb-2"
                 >
                   Email
                 </label>
@@ -63,7 +63,7 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-[rgba(255,255,255,0.08)] bg-[#111111] text-[#f8fafc] focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent outline-none transition-all"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -71,7 +71,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-[#94a3b8] mb-2"
                 >
                   Message
                 </label>

@@ -3,14 +3,14 @@ function FeatureItem({ item, checked, onToggle }) {
     <label
       className={`flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 transition-colors ${
         checked
-          ? "border-[#0137a2] bg-[#0137a2]/10"
-          : "border-zinc-800 bg-[#101012] hover:border-zinc-600"
+          ? "border-[#3b82f6] bg-[#3b82f6]/10"
+          : "border-zinc-800 bg-[#111111] hover:border-zinc-600"
       }`}
     >
       <input type="checkbox" className="sr-only" checked={checked} onChange={onToggle} />
       <span
         className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border transition-colors ${
-          checked ? "border-[#0137a2] bg-[#0137a2]" : "border-zinc-600"
+          checked ? "border-[#3b82f6] bg-[#3b82f6]" : "border-zinc-600"
         }`}
       >
         {checked && (
@@ -19,10 +19,10 @@ function FeatureItem({ item, checked, onToggle }) {
           </svg>
         )}
       </span>
-      <span className={`flex-1 text-[13px] ${checked ? "text-[#7fb0ff]" : "text-zinc-300"}`}>
+      <span className={`flex-1 text-[13px] ${checked ? "text-[#60a5fa]" : "text-zinc-300"}`}>
         {item.label}
       </span>
-      <span className={`text-[13px] font-semibold ${checked ? "text-[#7fb0ff]" : "text-zinc-300"}`}>
+      <span className={`text-[13px] font-semibold ${checked ? "text-[#60a5fa]" : "text-zinc-300"}`}>
         ${item.price}
       </span>
     </label>
@@ -42,7 +42,7 @@ export default function FeatureAccordion({ groups, selected, onToggle, openId, o
           <div key={group.id}>
             <button
               onClick={() => onOpen(group.id)}
-              className="flex w-full items-center justify-between rounded-xl border border-zinc-800 bg-[#101012] px-3 py-2.5 transition-colors hover:border-zinc-600"
+              className="flex w-full items-center justify-between rounded-xl border border-zinc-800 bg-[#111111] px-3 py-2.5 transition-colors hover:border-zinc-600"
             >
               <span className="flex items-center gap-2 text-[13px] font-bold text-white">
                 {group.label}

@@ -49,9 +49,9 @@ export default function Architecture() {
         }
 
         .arch-panel {
-          background: #161817;
+          background: #111111;
           border: 1px solid rgba(255, 255, 255, 0.06);
-          border-left: 2px solid #22c55e;
+          border-left: 2px solid #3b82f6;
           padding: 2.25rem 2.5rem;
           display: flex;
           align-items: center;
@@ -65,7 +65,7 @@ export default function Architecture() {
 
         .arch-title {
           margin: 0 0 0.9rem;
-          color: #22c55e;
+          color: #3b82f6;
           font-size: 1.35rem;
           font-weight: 700;
           letter-spacing: -0.01em;
@@ -82,7 +82,7 @@ export default function Architecture() {
           flex-shrink: 0;
           width: 26rem;
           max-width: 100%;
-          background: #1d201f;
+          background: #0d0d0d;
           border: 1px solid rgba(255, 255, 255, 0.05);
           padding: 1.1rem 1.4rem;
         }
@@ -102,7 +102,7 @@ export default function Architecture() {
 
         .arch-code {
           margin: 0;
-          color: #22c55e;
+          color: #3b82f6;
           font-size: 0.8rem;
           line-height: 1.7;
           overflow-x: auto;

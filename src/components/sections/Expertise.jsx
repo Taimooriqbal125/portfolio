@@ -39,8 +39,8 @@ export default function Expertise() {
     <section
       id="expertise"
       style={{
-        padding: "100px 20px 80px",
-        background: "#0b0d0c",
+        padding: "40px 20px 80px",
+        background: "#0a0a0a",
         overflow: "hidden",
         width: "100%",
       }}
@@ -58,7 +58,7 @@ export default function Expertise() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#22c55e",
+            color: "#3b82f6",
           }}
         >
           <FaReact size={20} />
